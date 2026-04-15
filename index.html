@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendimiento Escolar</title>
+     <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+</body>
+</html>
+
+<div id="factura"> <div class="header-empresa">
+        <h2>CENTRO EDUCATIVO NACIONAL</h2>
+        <p>Villarrica, Paraguay | Reporte Académico</p>
+    </div>
+
+    <h1>Rendimiento Escolar</h1>
+
+    <div class="datos-cliente no-print">
+        <label for="alumno">Nombre del Alumno</label>
+        <input type="text" id="alumno" placeholder="Nombre del Alumno">
+
+        <label for="nota">Nota (1-5)</label>
+        <input type="number" id="nota" placeholder="Nota (1-5)" min="1" max="5">
+        <button id="btn-agregar" onclick="agregarAlumno()">Cargar Dato</button>
+    </div>
+
+    <table id="tabla-escolar">
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Nota</th>
+                <th>Rendimiento Visual</th>
+                <th class="no-print">Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+
+    <div class="totales-container">
+        <p>Cantidad de Alumnos: <span id="cant-alumnos">0</span></p>
+        <p>Promedio General: <span id="promedio-total">0</span></p>
+        <strong>Estado del Grupo: <span id="estado-grupo">-</span></strong>
+    </div>
+</div>
+
+<div class="controles no-print">
+    <button onclick="window.print()" style="background-color: #3498db;">Generar Reporte PDF</button>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

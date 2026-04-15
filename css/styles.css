@@ -1,0 +1,135 @@
+/* --- Estilos Base Profesional --- */
+body { 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    background-color: #fff5f8; 
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 20px;
+}
+#factura { background: white; padding: 40px; width: 100%; max-width: 850px; border-radius: 20px; box-shadow: 0 10px 25px rgba(136, 14, 79, 0.1); }
+.header-empresa { border-bottom: 2px solid #880e4f; margin-bottom: 20px; padding-bottom: 10px; }
+h1 { text-align: center; color: #880e4f; }
+
+/* Formulario */
+.datos-cliente { display: flex; gap: 10px; margin-bottom: 20px; }
+input { padding: 8px; border: 1px solid #ddd; border-radius: 4px; flex: 1; }
+#btn-agregar { background: #ad1457; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 4px; }
+
+/* Tabla */
+table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+th, td { border-bottom: 1px solid #eee; padding: 12px; text-align: left; }
+th { background: #fce4ec; color: #880e4f; }
+
+/* Gráfico de barras */
+.bar-container { 
+    background-color: #fce4ec; 
+    width: 100%; 
+    height: 18px; 
+    border-radius: 50px; 
+    overflow: hidden; 
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); 
+    border: 1px solid #f8bbd0; 
+}
+
+.bar-fill { 
+    height: 100%; 
+    transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); 
+    border-radius: 50px; 
+    position: relative;
+    background-image: linear-gradient(
+        45deg, 
+        rgba(255, 255, 255, 0.3) 25%, 
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        rgba(255, 255, 255, 0.3) 75%, 
+        transparent 75%, 
+        transparent
+    );
+    background-size: 1rem 1rem;
+    animation: move-stripes 2s linear infinite;
+}
+
+.nota-excelente { background-color: #880e4f; }
+.nota-regular { background-color: #d81b60; }
+.nota-bajo { background-color: #f06292; }
+
+@keyframes move-stripes {
+    from { background-position: 1rem 0; }
+    to { background-position: 0 0; }
+}
+
+/* Estado y Totales */
+.totales-container { text-align: right; }
+#estado-grupo { padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+
+.btn-eliminar { color: #ad1457; border: 1px solid #ad1457; background: none; cursor: pointer; padding: 2px 10px; border-radius: 4px; }
+.btn-eliminar:hover { background: #ad1457; color: white; }
+
+@media print {
+    .no-print { display: none !important; }
+    body { background: none; padding: 0; display: block; }
+    #factura { box-shadow: none; border: none; width: 95%; margin: 0 auto; }
+    /* Forzar la impresión de colores de fondo y gradientes (rayas) */
+    .bar-container, .bar-fill {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+/* CONTENEDOR DE CONTROLES CENTRADO */
+.controles {
+    width: 100%;
+    display: flex;
+    justify-content: center;   /* centra horizontalmente */
+    align-items: center;       /* centra verticalmente si hay altura */
+    padding: 20px;
+}
+
+/* BOTÓN ESTILO PROFESIONAL */
+.controles button {
+    background-color: #ad1457;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* EFECTO HOVER */
+.controles button:hover {
+    background-color: #880e4f;
+    transform: scale(1.05);
+}
+
+/* OCULTAR EN IMPRESIÓN */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ad1457;
+    box-shadow: 0 0 5px rgba(173, 20, 87, 0.3);
+}
